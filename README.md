@@ -1,12 +1,12 @@
-# ConvoXML: XML based Language for Modeling Conversations
+# ConvoXML
 
 ## Introduction
-ConvoXML is a Python-based framework that offers an intuitive and easy-to-use language for modeling conversations using XML. It is ideal for developers and researchers in conversational AI, allowing for structured definition and interaction with various conversational agents, including integrations with AI models like OpenAI and Google's generative AI.
+ConvoXML is a Python-based framework for modeling conversations between intelligent agents using XML. It is ideal for developers and researchers in conversational AI, allowing for structured definition and interaction with various conversational agents, including integrations with AI models like OpenAI's GPT API and Google's Palm API.
 
 
 ## Core Concepts and Functionalities
 - **XML-Based Modeling**: Easily define conversation structures and agent roles using XML.
-- **Agent Flexibility**: Create various types of agents, including custom ones, to suit different models of conversation.
+- **Agent Flexibility**: Create various types of agents using custom prompts to suit different models of conversation.
 - **AI Integration**: Seamlessly integrate with popular AI models like OpenAI and Google's generative AI for advanced conversational capabilities.
 - **Conversation Flow Control**: Manage conversation paths, loops, and conditions effectively.
 - **Scalability and Extensibility**: Easily scale and extend conversations and agent functionalities.
