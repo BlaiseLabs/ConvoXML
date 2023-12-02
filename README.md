@@ -107,6 +107,24 @@ The XML syntax in ConvoXML:
 
 The action, trigger and case attributes aren't required but are useful for communicating the control flow of the ConvoLoop.
 
+## Sequence Diagram Example
+Below is a sequence diagram of a similiar conversation modeled in the file `examples/test_xml2.xml`:
+
+```
+Moderator       Participant4       Participant5       Participant6
+    |                 |                   |                  |
+    |---(1) decideNext-------------------->|                  |
+    |                 |<--(2) acknowledge--|                  |
+    |                 |                   |                  |
+    |---(1) decideNext--------------------------------------->|
+    |                 |                   |<--(2) acknowledge|
+    |                 |                   |                  |
+    |---(1) decideNext-------------------->|                  |
+    |                 |                   |                  |
+    |                 |<--(2) acknowledge--------------------|
+```
+
+
 ## Installation
 ```bash
 git clone [repository-url]
@@ -129,21 +147,22 @@ parser = ConvoXML(xml_string)
 parser.run()
 ```
 
-## Sequence Diagram Representation
-Below is an ASCII representation of the `test_xml2.xml` conversation model:
 
-```
-Moderator       Participant4       Participant5       Participant6
-    |                 |                   |                  |
-    |---(1) decideNext-------------------->|                  |
-    |                 |<--(2) acknowledge--|                  |
-    |                 |                   |                  |
-    |---(1) decideNext--------------------------------------->|
-    |                 |                   |<--(2) acknowledge|
-    |                 |                   |                  |
-    |---(1) decideNext-------------------->|                  |
-    |                 |                   |                  |
-    |                 |<--(2) acknowledge--------------------|
+## Palm and OpenAI Agents
+To set the API key for either agent use the openai_key and palm_key arguments in the ConvoXML class respectively
+
+```python
+from ConvoXML import ConvoXML
+
+# Load the example template with OpenAI Agents
+with open('./examples/test_xml2.xml', 'r') as file:
+    xml_string = file.read()
+
+# Load the corresponding api key 
+with open('./mykey.txt', 'r') as file:
+    api_key = file.read()
+
+parser(xml_string, openai_key=api_key)
 ```
 
 ## Creating Your Own Agent Subclass
