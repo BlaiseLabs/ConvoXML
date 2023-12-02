@@ -13,7 +13,7 @@ ConvoXML is a Python-based framework for modeling conversations between intellig
 ```bash
 git clone [repository-url]
 cd ConvoXML
-pip install -r requirements.txt  # if a requirements file exists
+pip install -r requirements.txt
 ```
 
 ## Usage
