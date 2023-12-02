@@ -1,0 +1,22 @@
+<InteractionModel>
+  <!-- Roles definition -->
+  <Roles>
+    <Role name="Moderator" class="TestModerator" input_table="Messages,Summary"/>
+    <Role name="Participant1" />
+    <Role name="Participant2" />
+    <Role name="Participant3" />
+  </Roles>
+
+    <!-- Interaction Sequence -->
+    <ConvoLoop>
+
+      <!-- Moderator decides the next action -->
+      <Moderator action="decideNext">
+        <!-- Different cases based on the Moderator's decision -->
+        <Case action="acknowledge" trigger="decideNext" case="A" role="Participant1"/>
+        <Case action="acknowledge" trigger="decideNext" case="B" role="Participant2"/>
+        <Case action="acknowledge" trigger="decideNext" case="C" role="Participant3"/>
+      </Moderator>
+
+    </ConvoLoop>
+</InteractionModel>

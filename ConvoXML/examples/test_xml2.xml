@@ -1,0 +1,22 @@
+<InteractionModel>
+  <!-- Roles definition -->
+  <Roles>
+    <Role name="Moderator" class="TestModerator" input_table="Messages,Summary"/>
+    <Role name="Participant4" class="OpenAIAgent" />
+    <Role name="Participant5" class="OpenAIAgent" />
+    <Role name="Participant6" class="OpenAIAgent" />
+  </Roles>
+
+    <!-- Interaction Sequence -->
+    <ConvoLoop>
+
+      <!-- Moderator decides the next action -->
+      <Moderator action="decideNext">
+        <!-- Different cases based on the Moderator's decision -->
+        <Case action="acknowledge" trigger="decideNext" case="A" role="Participant4"/>
+        <Case action="acknowledge" trigger="decideNext" case="B" role="Participant5"/>
+        <Case action="acknowledge" trigger="decideNext" case="C" role="Participant6"/>
+      </Moderator>
+
+    </ConvoLoop>
+</InteractionModel>
