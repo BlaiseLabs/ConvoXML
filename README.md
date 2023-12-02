@@ -11,9 +11,7 @@ ConvoXML is a Python-based framework for modeling conversations between intellig
 
 ## Installation
 ```bash
-git clone [repository-url]
-cd ConvoXML
-pip install -r requirements.txt
+pip install ConvoXML
 ```
 
 ## Usage
