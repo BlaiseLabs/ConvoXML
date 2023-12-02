@@ -94,27 +94,18 @@ Moderator       AI_Agent1       AI_Agent2       AI_Agent3
       <Case action="engageAI2" trigger="selectAgent" case="B" role="AI_Agent2"/>
       <Case action="engageAI3" trigger="selectAgent" case="C" role="AI_Agent3"/>
     </Moderator>
-
-    <AI_Agent1 action="provideResponse"/>
-    <AI_Agent2 action="generateIdea"/>
-    <AI_Agent3 action="solveProblem"/>
   </ConvoLoop>
 </InteractionModel>
 
 ```
 
 ## Understanding XML Syntax in ConvoXML
-The XML syntax in ConvoXML is intuitive:
+The XML syntax in ConvoXML:
 - `<Role>`: Defines a participant in the conversation.
 - `<ConvoLoop>`: Sets up the structure for conversation loops and decision-making.
 - `Attributes and Tags`: Represent property and class values for each role instance and allows for detailed control over the conversation flow and agent behavior.
 
-## Advantages of ConvoXML
-- **Ease of Use**: Simple, XML-based conversation definition.
-- **Versatility**: Suitable for various conversational AI applications.
-- **Customizability**: Easy to create and integrate custom agents.
-- **Advanced AI Integration**: Supports leading AI technologies.
-
+The action, trigger and case attributes aren't required but are useful for communicating the control flow of the ConvoLoop.
 
 ## Installation
 ```bash
@@ -159,7 +150,7 @@ Moderator       Participant4       Participant5       Participant6
 Creating a custom agent subclass involves extending the `AgentInterface` class. Here's a simplified example of how you can create your own agent, similar to the `OpenAIAgent`.
 
 ```python
-from .AgentInterface import AgentInterface
+from ConvoXML import AgentInterface
 
 class MyCustomAgent(AgentInterface):
     def __init__(self, **params):
@@ -177,11 +168,6 @@ class MyCustomAgent(AgentInterface):
 
 In this example, `MyCustomAgent` is a new agent type. You can customize the `send_message` and `execute` methods based on your agent's specific behavior.
 
-## Features
-- **XML-Based Conversation Modeling**
-- **Multiple Agent Types**
-- **Extensible Framework**
-- **Testing and Examples**
 
 ## Running Tests
 ```bash
