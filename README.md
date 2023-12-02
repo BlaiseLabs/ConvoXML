@@ -1,5 +1,3 @@
-# ConvoXML
-
 ## Introduction
 ConvoXML is a Python-based framework for modeling conversations between intelligent agents using XML. It is ideal for developers and researchers in conversational AI, allowing for structured definition and interaction with various conversational agents, including integrations with AI models like OpenAI's GPT API and Google's Palm API.
 
